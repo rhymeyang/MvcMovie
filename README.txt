@@ -1,11 +1,13 @@
 [CYB206 Web Application Security - Lab1]
 
+Name: Yun Yang ID: 0853062
+
+# Week 2
+
 17:50 UTC
 Add a Controler(HelloWorldController.cs), according to [Part 2, add a controller to an ASP.NET Core MVC app](https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/adding-controller?view=aspnetcore-7.0&tabs=visual-studio).
 
 Change function return type to string, and run the project, it will show plain text of the **HelloWorld** page.
-
-
 
 18:10 UTC
 
@@ -22,4 +24,24 @@ Add an image to Index page, `<img style="display:block; margin:auto; " src="~/im
 Add parameter to page `Helloworld/welcome`, so for url `https://localhost:7291/Helloworld/welcome?name=yang&numTimes=3` it will show the name and number.
 
 Change Welcome page, to show the page as view sets.
+
+# Week 3
+
+### 17:35 UTC
+
+Add Entity Framework MVC Controler, version v1.0.0.0
+
+`ID: mvcControlerWithContextScaffolder`
+
+### 18:17 UTC
+
+Initial Migration, and database created
+20240523175346_InitialCreate
+
+
+### 18:24 UTC
+
+Finish part 4
+
+
 

@@ -14,12 +14,14 @@ public static class SeedData
             serviceProvider.GetRequiredService<
                 DbContextOptions<MvcMovieContext>>()))
         {
-            // Look for any movies.
+            //Look for any movies.
             if (context.Movie.Any())
-            {
-                return;   // DB has been seeded
-            }
+                {
+                    return;   // DB has been seeded
+                }
+
             context.Movie.AddRange(
+
                 new Movie
                 {
                     Title = "When Harry Met Sally",
@@ -47,9 +49,32 @@ public static class SeedData
                     ReleaseDate = DateTime.Parse("1959-4-15"),
                     Genre = "Western",
                     Price = 3.99M
-                }
+                },
+                 new Movie
+                 {
+                     Title = "Back to Black",
+                     ReleaseDate = DateTime.Parse("2024-05-17"),
+                     Genre = "Biography",
+                     Price = 12.00M
+                 },
+                 new Movie
+                 {
+                     Title = "IF",
+                     ReleaseDate = DateTime.Parse("2024-05-17"),
+                     Genre = "Animation",
+                     Price = 5.00M
+                 },
+                 new Movie
+                 {
+                     Title = "Shinda Shinda No Papa",
+                     ReleaseDate = DateTime.Parse("2024-05-10"),
+                     Genre = "Comedy",
+                     Price = 12.00M
+                 }
             );
+            
             context.SaveChanges();
+           
         }
     }
 }
