@@ -61,6 +61,8 @@ Finish part 4
 
 ### Add Rating
 
+**17:16:40** **UTC**
+
 From the **Tools** menu, select **NuGet Package Manager** > **Package Manager Console** .
 
 ```shell
@@ -72,6 +74,10 @@ list version, **Ensure the Correct Version of .NET SDK**:
 
 ```shell
 dotnet --list-sdks
-
 ```
 
+### Show Rating on UI
+
+**19:21:07** **UTC**
+
+Index and Edit page
