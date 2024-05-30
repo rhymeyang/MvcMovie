@@ -22,8 +22,8 @@ using (var scope = app.Services.CreateScope())
     try
     {
         var context = services.GetRequiredService<MvcMovieContext>();
-        context.DropMoviesTable(); // Drop the table
-        SeedData.Initialize(services); // Seed data after dropping the table
+        context.Database.Migrate(); // Apply migrations
+        SeedData.Initialize(services); // Seed data after migrations
     }
     catch (Exception ex)
     {
