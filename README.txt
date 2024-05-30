@@ -43,5 +43,9 @@ Initial Migration, and database created
 
 Finish part 4
 
+### 20:18 UTC
+
+`public async Task<IActionResult> Index(string searchString)` even though the parameter type are the same **string**, if the name changed to `id`,  it will support `https://localhost:7291/Movies/index/rio`, if it is `searchString`, it can only use the format `https://localhost:7291/Movies?searchstring=rio`, for filter.
+
 
 
