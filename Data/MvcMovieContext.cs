@@ -14,6 +14,11 @@ namespace MvcMovie.Data
         {
         }
 
-        public DbSet<MvcMovie.Models.Movie> Movie { get; set; } = default!;
+        //public DbSet<MvcMovie.Models.Movie> Movie { get; set; } = default!;
+        public DbSet<Movie> Movie { get; set; }
+        public void DropMoviesTable()
+        {
+            this.Database.ExecuteSqlRaw("DROP TABLE IF EXISTS Movies;");
+        }
     }
 }

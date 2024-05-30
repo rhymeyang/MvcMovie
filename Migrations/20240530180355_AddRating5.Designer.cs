@@ -12,8 +12,8 @@ using MvcMovie.Data;
 namespace MvcMovie.Migrations
 {
     [DbContext(typeof(MvcMovieContext))]
-    [Migration("20240523191310_AddRange4")]
-    partial class AddRange4
+    [Migration("20240530180355_AddRating5")]
+    partial class AddRating5
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -37,7 +37,10 @@ namespace MvcMovie.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18, 2)");
+
+                    b.Property<decimal>("Rating")
+                        .HasColumnType("decimal(3, 1)");
 
                     b.Property<DateTime>("ReleaseDate")
                         .HasColumnType("datetime2");

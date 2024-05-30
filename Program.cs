@@ -4,6 +4,8 @@ using MvcMovie.Data;
 using MvcMovie.Models;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Configure services
 builder.Services.AddDbContext<MvcMovieContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("MvcMovieContext") ?? throw new InvalidOperationException("Connection string 'MvcMovieContext' not found.")));
 
@@ -12,11 +14,23 @@ builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
+// Seed the database
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
 
-    SeedData.Initialize(services);
+    try
+    {
+        var context = services.GetRequiredService<MvcMovieContext>();
+        context.DropMoviesTable(); // Drop the table
+        SeedData.Initialize(services); // Seed data after dropping the table
+    }
+    catch (Exception ex)
+    {
+        var logger = services.GetRequiredService<ILogger<Program>>();
+        logger.LogError(ex, "An error occurred during database initialization.");
+		//logger.LogError(ex, "An error occurred seeding the DB.");
+    }
 }
 
 // Configure the HTTP request pipeline.

@@ -27,16 +27,26 @@ Change Welcome page, to show the page as view sets.
 
 # Week 3
 
-### 17:35 UTC
+###  Add Entity Framework MVC Controler
 
+17:35 UTC 
 Add Entity Framework MVC Controler, version v1.0.0.0
 
 `ID: mvcControlerWithContextScaffolder`
 
-### 18:17 UTC
+### Migration
+
+18:17 UTC
 
 Initial Migration, and database created
 20240523175346_InitialCreate
+
+```shell
+Add-Migration InitialCreate
+Update-Database
+```
+
+
 
 
 ### 18:24 UTC
@@ -47,5 +57,21 @@ Finish part 4
 
 `public async Task<IActionResult> Index(string searchString)` even though the parameter type are the same **string**, if the name changed to `id`,  it will support `https://localhost:7291/Movies/index/rio`, if it is `searchString`, it can only use the format `https://localhost:7291/Movies?searchstring=rio`, for filter.
 
+## Week 4
 
+### Add Rating
+
+From the **Tools** menu, select **NuGet Package Manager** > **Package Manager Console** .
+
+```shell
+Add-Migration AddRating
+Update-Database
+```
+
+list version, **Ensure the Correct Version of .NET SDK**:
+
+```shell
+dotnet --list-sdks
+
+```
 
