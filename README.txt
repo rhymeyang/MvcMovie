@@ -81,4 +81,10 @@ dotnet --list-sdks
 
 Add Rating to  Index and Edit page
 
-vs 2022 PG2G4-TNFDH-QCXF3-D2BCM-FGG4W
+# Week 5
+
+## Finish Rating 
+
+**19:02:05** **UTC**
+
+Show Rating on Create, Edit, Delete, and Detail pages.
